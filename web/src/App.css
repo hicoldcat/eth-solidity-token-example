@@ -1,0 +1,65 @@
+@import '~antd/dist/antd.css';
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.empty {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+}
+
+.address {
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+.notic {
+  color: #999999;
+  font-size: 14px;
+}
+
+.content {
+  height: 30vh;
+  font-size: 18px;
+}
+
+.left {
+  padding: 16px;
+  background-color: #e6f7ff;
+}
+
+.right {
+  padding: 16px;
+  background-color: #e6fffb;
+}
+
+.message {
+  height: 30vh;
+  background-color: #f0f0f0;
+}
+
+.tx {
+  height: 60vh;
+  background-color: #e1e2f1;
+}
+
+.operate {
+  width: 80%;
+}
+
+.input {
+  width: 100%;
+}
