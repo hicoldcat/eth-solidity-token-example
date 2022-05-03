@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { ethers } from 'ethers';
-import { Button, Card, Col, Input, InputNumber, Layout, Modal, Row, Spin } from 'antd';
-import FoolToken from './artifacts/Fool.json';
 import ReactJson from 'react-json-view'
+import { Button, Card, Col, Input, InputNumber, Layout, Modal, Row, Spin } from 'antd';
+
+import FoolToken from './artifacts/Fool.json';
+
+import './App.css';
 
 const { Content } = Layout;
 
@@ -32,7 +34,6 @@ function App() {
   const [number, setNumber] = useState(0);
   const [address, setAddress] = useState(REACT_APP_RECIVER)
 
-  // const [logs, setLogs] = useState<any>({})
   const [txs, setTxs] = useState<any>({})
 
   let provider = new ethers.providers.JsonRpcProvider("http://localhost:8545")
@@ -127,23 +128,10 @@ function App() {
     }
   }
 
-  // const onProviderListerner = (result: any) => {
-  //   if (!logs[result?.transactionHash]) {
-  //     setLogs({ ...logs, [result?.transactionHash]: result })
-  //   }
-  // }
-
   useEffect(() => {
     refetch()
-    // provider.on({
-    //   address: REACT_APP_CONTARCT_ADDRESS,
-    //   topics: [
-    //     ethers.utils.id("Transfer(address,address,uint256)")
-    //   ]
-    // }, onProviderListerner);
     contractWithSigner.on('Transfer', onContractTransfer)
     return () => {
-      // provider.removeAllListeners()
       contractWithSigner.removeListener('Transfer', () => {
         console.log('contractWithSigner removeListener Transfer ');
       })
@@ -218,12 +206,10 @@ function App() {
 
             </Col>
           </Row>
+
           <Card className='tx' title="交易信息" style={{ overflowY: "auto" }}>
             <ReactJson displayDataTypes={false} name={false} src={Object.values(txs)} onSelect={showTxDetail} />
           </Card>
-          {/* <Card className='message' title="交易日志" style={{ overflowY: "auto" }}>
-            <ReactJson src={Object.values(logs)} collapsed />
-          </Card> */}
 
           <Modal
             centered
