@@ -494,3 +494,6 @@ export default App;
 此外，也可以在github上查找更多相关的Repository ，比如[https://github.com/frankiefab100/Blockchain-Development-Resources](https://github.com/frankiefab100/Blockchain-Development-Resources)。
 
 之后，如果有需求，我也会再写一些NFT相关的DEMO，和更复杂的合约。
+
+
+![](https://cdn.jsdelivr.net/gh/hicoldcat/assets@main/img/my.png)
